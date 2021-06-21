@@ -17,4 +17,4 @@ class Libro(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.ISBN
+        return self.nombreLibro
