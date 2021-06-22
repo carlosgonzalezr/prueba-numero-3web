@@ -41,35 +41,13 @@
 
 
     <div class="container">
-        <h1 class="text-center">libros</h1>
-        <div class="row">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">ISBN</th>
-                        <th scope="col">Nombre del libro</th>
-                        <th scope="col">Autor</th>
-                        <th scope="col">Descripción</th>
-                        <th scope="col">Categoría</th>
-                        <th scope="col">Opciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for i in libros %}
-                    <tr>
-                        <td>{{i.ISBN}}</td>
-                        <td>{{i.nombreLibro}}</td>
-                        <td>{{i.autor}}</td>
-                        <td>{{i.Descripcion}}</td>
-                        <td>{{i.categoria}}</td>
-                        <td><a href="">Modificar</a></td>
-                        <td><a href="">eliminar</a></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            <a href="{% url 'form_libro' %}">Nuevo libro</a>
-        </div>
+        <form action="" method="post" id="formulario">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_table }}
+            </div>
+            <input type="submit" value="Enviar" class="btn btn-primary" id="enviar">
+        </form>
     </div>
 
 </body>
