@@ -62,7 +62,7 @@
                         <td>{{i.autor}}</td>
                         <td>{{i.Descripcion}}</td>
                         <td>{{i.categoria}}</td>
-                        <td><a href="">Modificar</a></td>
+                        <td><a href="{% url 'form_mod_libro' i.ISBN %}">Modificar</a></td>
                         <td><a href="">eliminar</a></td>
                     </tr>
                     {% endfor %}

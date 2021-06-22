@@ -6,5 +6,5 @@ urlpatterns = [
     path('libros',libros,name ="libros"),
     path('registro',registro,name ="registro"),
     path('form-libro',form_libro,name ="form_libro"),
-    path('modificar-libro/<id>',form_mod_libro,name ="form_mod_libro"),
+    path('form-mod-libro/<id>',form_mod_libro,name ="form_mod_libro"),
 ]

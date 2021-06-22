@@ -33,14 +33,14 @@ def form_libro(request):
 
     return render(request, 'core/form_libro.html', datos)
 
-def form_mod_libro(request,id):
+def form_mod_libro(request, id):
     libro = Libro.objects.get(ISBN=id)
-    datos={
-        'form': LibroForm(instance=libro)
+    datos = {
+        'form': LibroForm(data=request.POST, instance=libro)
     }
     if request.method == 'POST':
-    formulario = LibroForm(data=request.POST, instance=libro)
+        formulario = LibroForm(data=request.POST, instance=libro)
         if formulario.is_valid:
-        formulario.save()
-        datos['mensaje'] = "Datos modificados"
+            formulario.save()
+            datos['mensaje'] = "Datos modificados"
     return render(request, 'core/form_mod_libro.html', datos)
