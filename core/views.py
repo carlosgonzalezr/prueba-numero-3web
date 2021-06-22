@@ -12,5 +12,9 @@ def registro(request):
     return render(request, 'core/registro.html')
 
 def libros(request):
+    libros=Libro.objects.all()
+    datos={
+        'libros':libros
+    }
 
-    return render(request, 'core/libros.html')
+    return render(request, 'core/libros.html', datos)
