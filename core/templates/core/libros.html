@@ -63,7 +63,7 @@
                         <td>{{i.Descripcion}}</td>
                         <td>{{i.categoria}}</td>
                         <td><a href="{% url 'form_mod_libro' i.ISBN %}">Modificar</a></td>
-                        <td><a href="">eliminar</a></td>
+                        <td><a href="{% url 'form_del_libro' i.ISBN %}">eliminar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>

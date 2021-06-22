@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Libro
 from .forms import LibroForm
 
@@ -44,3 +44,8 @@ def form_mod_libro(request, id):
             formulario.save()
             datos['mensaje'] = "Datos modificados"
     return render(request, 'core/form_mod_libro.html', datos)
+
+def form_del_libro(request,id):
+    libro = Libro.objects.get(ISBN=id)
+    libro.delete()
+    return redirect(to=libros)
