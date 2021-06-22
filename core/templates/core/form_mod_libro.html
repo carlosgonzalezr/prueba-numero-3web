@@ -29,7 +29,7 @@
                 <a class="nav-link active" aria-current="page" href="{% url 'registro'%}">registro de usuario</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'libros'%}">registro de libro </a>
+                <a class="nav-link active" aria-current="page" href="{% url 'libros'%}">registro de libros</a>
               </li>        
             </ul>
             <span class="navbar-text">
@@ -43,6 +43,8 @@
 
     <div class="container">
         <form action="" method="post" id="formulario">
+            
+            <h1>Modificar libro</h1>
             {% csrf_token %}
             <div class="form-group">
                 {{ form.as_table }}
